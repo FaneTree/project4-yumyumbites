@@ -13,19 +13,16 @@ Welcome to [YumYumBites](https://project4-yumyumbites-8cohx7mup-tanakorntree.ver
 - Hygraph (GraphQL) for backend
 - Deploy on Vercel
 
-<a href="https://gifyu.com/image/Suzoc">
-  <img src="https://s11.gifyu.com/images/Untitled-design51d4ddf6724cda22.gif" alt="Untitled-design51d4ddf6724cda22.gif" border="0" />
-</a>
+<img src="./public/website.gif" border="0"/>
 
 ### Snapshot
-<div>
-  <p>The site</p>
-  <img src="https://i.ibb.co/8gmNTVc/Screen-Shot-2023-05-26-at-12-28-13-am.png" alt="Screen-Shot-2023-05-26-at-12-28-13-am" border="0" height="auto">
-  <p>Mobile version</p>
-  <img src="https://i.ibb.co/wJ1qmP1/Screen-Shot-2023-05-26-at-12-29-35-am.png" alt="Screen-Shot-2023-05-26-at-12-29-35-am" border="0" height="auto">
-</div>
 
+|Desktop|Mobile|
+|:-:|:-:|
+| <img src="./public/snapshot.png" border="0"/> | <img src="./public/mobileSnapshot.png" border="0"/> |
+    
 ---
+
 ## :bell: Put it all together
 
 ### :bulb: Features:
