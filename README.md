@@ -1,38 +1,98 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a href="https://project4-yumyumbites-8cohx7mup-tanakorntree.vercel.app/">
+    <img src="https://i.ibb.co/nBfJyNh/Screen-Shot-2023-05-25-at-9-16-19-pm.png" alt="YumYumBites logo" title="YumYumBites" align="right" height="50" />
+</a>
 
-## Getting Started
+# :taco: YumYumBites
 
-First, run the development server:
+Welcome to [YumYumBites](https://project4-yumyumbites-8cohx7mup-tanakorntree.vercel.app/), your go-to source for food and restaurant content in Sydney! Discover the best culinary spots, mouthwatering reviews, and insider tips as we guide you through Sydney's vibrant dining scene. From trendy cafes to hidden gems, indulge your taste buds with YumYumBites!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Built with
+- React.js
+- Next.js
+- Tailwind CSS
+- Hygraph (GraphQL) for backend
+- Deploy on Vercel
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<a href="https://gifyu.com/image/Suzoc">
+  <img src="https://s11.gifyu.com/images/Untitled-design51d4ddf6724cda22.gif" alt="Untitled-design51d4ddf6724cda22.gif" border="0" />
+</a>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Snapshot
+<div>
+  <p>The site</p>
+  <img src="https://i.ibb.co/8gmNTVc/Screen-Shot-2023-05-26-at-12-28-13-am.png" alt="Screen-Shot-2023-05-26-at-12-28-13-am" border="0" height="auto">
+  <p>Mobile version</p>
+  <img src="https://i.ibb.co/wJ1qmP1/Screen-Shot-2023-05-26-at-12-29-35-am.png" alt="Screen-Shot-2023-05-26-at-12-29-35-am" border="0" height="auto">
+</div>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+---
+## :bell: Put it all together
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### :bulb: Features:
+- Add comment for the blog and ability to save a name and an email in the browser for the next time comment.
+- Show prior comments in for the blogs.
+- Article category for food and restaurant for side bar and nav bar.
+- Carousel component to show all contents.
+- Mobile friendly website.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Note: About adding article and author, still use hygraph interface to directly put it into database.
 
-## Learn More
+### :spiral_calendar: Challenges:
+- Tailwind dependency and how to setup. There are version differences using purge: and content: which impact tailwind usage for the application. 
+After moved from purge to content, the code is as below.
+    
+    ```JavaScript
+       /** @type {import('tailwindcss').Config} */
+      module.exports = {
+        content: [
+          "./app/**/*.{js,ts,jsx,tsx}",
+          "./pages/**/*.{js,ts,jsx,tsx}",
+          "./components/**/*.{js,ts,jsx,tsx}",
 
-To learn more about Next.js, take a look at the following resources:
+          // Or if using `src` directory:
+          "./src/**/*.{js,ts,jsx,tsx}",
+        ],
+        theme: {
+          extend: {},
+        },
+        plugins: [],
+      }
+    ```
+- Carousel component design - It was hard to make desicion among the packages or pre-set components from tailwind. Then, the decision was made using 'react-multi-carousel' package as it matched the planned design.
+     
+     ```JavaScript
+      import Carousel from 'react-multi-carousel';
+      import 'react-multi-carousel/lib/styles.css';
+     ```
+     For FeaturedPosts component (Carousel), the return from the component are as below using the package.
+     
+     ```JavaScript
+       return (
+        <div className="mb-8">
+          <Carousel infinite customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} responsive={responsive} itemClass="px-4">
+            {dataLoaded && featuredPosts.map((post, index) => (
+              <FeaturedPostCard key={index} post={post} />
+            ))}
+          </Carousel>
+        </div>
+      );
+     ```
+- Schema design and connection was hard to manage as it is always confusing. The hardest thing was the detail inside post which comprises of:
+   - Title, Slug, Excerpt, Content, Featured Image, Featured Post, Author, Categories, and Comment.
+   - The schema design includes Author, Category, Comment, Post.
+  <br>
+  <a href="https://ibb.co/6rdRf4y">
+      <img src="https://i.ibb.co/5G7Wf51/Screen-Shot-2023-05-25-at-11-39-52-pm.png" alt="Screen-Shot-2023-05-25-at-11-39-52-pm"  border="0" height="auto" />
+  </a>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### :book: Lession:
+- It is hard to properly design schema in one go and expect it to cover all needs.
+- You can face dilemma or paradox of choice in term of package or pre-built components to use.
+- Choosing right database provider is hard and also time consuming. I choose this graphql as I would like to try this.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### :bookmark: Future updates:
+- Create user / author log-in, sign-up and sign-out.
+- Create CRUD interfaces for authors and also users to add comments, create articles, and manage comments visibility.
+- Manage navbar properly in order to manage more categories.
+- Implement a text editor: Integrate a rich text editor into the application.
+- Enable image uploading: Configure the text editor's image upload functionality.
