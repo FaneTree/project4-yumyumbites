@@ -15,7 +15,7 @@ Welcome to [YumYumBites](https://project4-yumyumbites-8cohx7mup-tanakorntree.ver
 
 <img src="./public/website.gif" border="0"/>
 
-### Snapshot
+### Snapshots
 
 |Desktop|Mobile|
 |:-:|:-:|
