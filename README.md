@@ -82,7 +82,7 @@ After moving from purge to content, the code is as below.
       <img src="https://i.ibb.co/5G7Wf51/Screen-Shot-2023-05-25-at-11-39-52-pm.png" alt="Screen-Shot-2023-05-25-at-11-39-52-pm"  border="0" height="auto" />
   </a>
 
-### :book: Lesson:
+### :book: Lessons:
 - It is hard to properly design schema in one go and expect it to cover all needs.
 - You can face a dilemma or paradox of choice in terms of the package or pre-built components to use.
 - Choosing the right database provider is hard and also time-consuming. I choose this graphql as I would like to try this.
