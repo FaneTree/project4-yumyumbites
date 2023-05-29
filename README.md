@@ -26,17 +26,17 @@ Welcome to [YumYumBites](https://project4-yumyumbites-8cohx7mup-tanakorntree.ver
 ## :bell: Put it all together
 
 ### :bulb: Features:
-- Add comment for the blog and ability to save a name and an email in the browser for the next time comment.
-- Show prior comments in for the blogs.
-- Article category for food and restaurant for side bar and nav bar.
+- Add comments for the blog and the ability to save a name and an email in the browser for the next time comment.
+- Show prior comments for the blogs.
+- Article category for food and restaurant for sidebar and nav bar.
 - Carousel component to show all contents.
-- Mobile friendly website.
+- Mobile-friendly website.
 
-Note: About adding article and author, still use hygraph interface to directly put it into database.
+Note: About adding the article and author, still use the hygraph interface to directly put it into the database.
 
 ### :spiral_calendar: Challenges:
 - Tailwind dependency and how to setup. There are version differences using purge: and content: which impact tailwind usage for the application. 
-After moved from purge to content, the code is as below.
+After moving from purge to content, the code is as below.
     
     ```JavaScript
        /** @type {import('tailwindcss').Config} */
@@ -55,13 +55,13 @@ After moved from purge to content, the code is as below.
         plugins: [],
       }
     ```
-- Carousel component design - It was hard to make desicion among the packages or pre-set components from tailwind. Then, the decision was made using 'react-multi-carousel' package as it matched the planned design.
+- Carousel component design - It was hard to decide on the packages or pre-set components from Tailwind. Then, the decision was made using the 'react-multi-carousel' package as it matched the planned design.
      
      ```JavaScript
       import Carousel from 'react-multi-carousel';
       import 'react-multi-carousel/lib/styles.css';
      ```
-     For FeaturedPosts component (Carousel), the return from the component are as below using the package.
+     For the FeaturedPosts component (Carousel), the return from the component is as below using the package.
      
      ```JavaScript
        return (
@@ -74,22 +74,22 @@ After moved from purge to content, the code is as below.
         </div>
       );
      ```
-- Schema design and connection was hard to manage as it is always confusing. The hardest thing was the detail inside post which comprises of:
+- Schema design and a connection was hard to manage as it is always confusing. The hardest thing was the detail inside the post which comprises of:
    - Title, Slug, Excerpt, Content, Featured Image, Featured Post, Author, Categories, and Comment.
-   - The schema design includes Author, Category, Comment, Post.
+   - The schema design includes Author, Category, Comment, and Post.
   <br>
   <a href="https://ibb.co/6rdRf4y">
       <img src="https://i.ibb.co/5G7Wf51/Screen-Shot-2023-05-25-at-11-39-52-pm.png" alt="Screen-Shot-2023-05-25-at-11-39-52-pm"  border="0" height="auto" />
   </a>
 
-### :book: Lession:
+### :book: Lesson:
 - It is hard to properly design schema in one go and expect it to cover all needs.
-- You can face dilemma or paradox of choice in term of package or pre-built components to use.
-- Choosing right database provider is hard and also time consuming. I choose this graphql as I would like to try this.
+- You can face a dilemma or paradox of choice in terms of the package or pre-built components to use.
+- Choosing the right database provider is hard and also time-consuming. I choose this graphql as I would like to try this.
 
 ### :bookmark: Future updates:
-- Create user / author log-in, sign-up and sign-out.
+- Create user/author log-in, sign-up, and sign-out.
 - Create CRUD interfaces for authors and also users to add comments, create articles, and manage comments visibility.
-- Manage navbar properly in order to manage more categories.
+- Manage the navbar properly to manage more categories.
 - Implement a text editor: Integrate a rich text editor into the application.
 - Enable image uploading: Configure the text editor's image upload functionality.
